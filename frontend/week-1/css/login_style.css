@@ -1,0 +1,218 @@
+@import url('https://fonts.googleapis.com/css2?family=Nunito+Sans:ital,opsz,wght@0,6..12,200..1000;1,6..12,200..1000&display=swap');
+*{
+    margin: 0;
+    padding: 0;
+}
+@keyframes slideintop{
+    from{
+        transform: translateY(-300px);
+    }
+    to{
+        transform: translateY(0px);
+    }
+}
+.slideintop{
+    animation: slideintop 0.8s ease-in 1s 1 normal;
+}
+body{
+    background-image: url(https://img.freepik.com/free-photo/arrangement-black-friday-shopping-carts-with-copy-space_23-2148667047.jpg?size=626&ext=jpg&ga=GA1.1.1480204119.1718841600&semt=ais_userhttps://i.pinimg.com/736x/21/08/96/2108963a4dcf74cdbcc13073c4185f83.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    font-family: "Nunito Sans", sans-serif;
+    height:100vh;
+    display:flex;
+    align-items:center;
+    justify-content: center;
+}
+.Role{
+    display:flex;
+    align-self: centre;
+    justify-content: space-between;
+    /* background-color: red; */
+    width:20vw;
+}
+.align_centre{
+    align-self: center;
+}
+.align_rig{
+    align-self: center;
+}
+.container{
+    display:flex;
+    align-items:center;
+    justify-content: center;
+    border : 3px solid white;
+    border-radius: 60px; 
+    height: 82vh;
+    width: 35vw;
+    color: white;
+    background-color: rgb(22, 23, 24);
+}
+.input{
+    width:50vh;
+    height:5vh;
+    border-radius: 6px;
+}
+.logo{
+    width:5vh;
+}
+.end button{
+    background-color:rgb(212, 11, 135);
+    color: white;
+    width:50vh;
+    height:5vh;
+    border-radius: 6px;
+    font-size: 16px;
+    cursor: pointer;
+}
+.end button:hover{
+    background-color:rgb(158, 11, 85);
+}
+.end,.no_acc{
+    display: flex;
+    justify-content: center;
+}
+.Forget, .no_acc a{
+    color: white;
+    text-decoration: none;
+}
+.Forget:hover, .no_acc a:hover{
+    color:blue;
+    font-size: large;
+}
+.form{
+    /* border: 2px solid red; */
+    display: flex;
+    flex-direction: column;
+    height: 70vh;
+    width: 318px;
+    justify-content: space-between;
+    align-items: center;
+}
+h2{
+    align-self: flex-start;
+}
+.form img{
+    align-self: flex-start;
+}
+.Forget{
+    align-self: flex-start;
+}
+@media (min-width:1900px){
+    .container{
+        width:25vw;
+    }
+}
+@media (min-width:1650px){
+   
+    .container{
+        width:30vw;
+    }
+}
+@media (min-width:1400px){
+    .container{
+        width:35vw;
+    }
+}
+@media (max-width:1024px){
+    .container{
+        width:40vw;
+    }
+    .Role{
+        width:25vw;
+    }
+}
+@media (max-width:900px){
+    .container{
+        width:43vw;
+    }
+    .Role{
+        width:30vw;
+    }
+}
+@media (max-width:810px){
+    .container{
+        width:50vw;
+    }
+    .Role{
+        width:35vw;
+    }
+}
+@media (max-width:662px){
+    .container{
+        width:55vw;
+        font-size: smaller;
+    }
+    .end button{
+        background-color:rgb(212, 11, 135);
+        color: white;
+        width:40vh;
+        height:5vh;
+        border-radius: 6px;
+        font-size: 16px;
+        cursor: pointer;
+    }
+    .input{
+        width:40vh;
+        height:5vh;
+        border-radius: 6px;
+    }
+    .form{
+        /* border: 2px solid red; */
+        display: flex;
+        flex-direction: column;
+        height: 70vh;
+        width: 250px;
+        justify-content: space-between;
+        align-items: center;
+    }
+    .no_acc{
+        display: flex;
+        flex-direction: column;
+    }
+    .Role{
+        width:40vw;
+    }
+}
+@media(max-width:564px){
+    .container{
+        width:62vw;
+        border-radius: 55px;
+    }
+    .no_acc{
+        display: flex;
+        flex-direction: column;
+    }
+    .Role{
+        width:45vw;
+    }
+}
+@media(max-width:458px){
+    .container{
+        width:70vw;
+        border-radius: 45px;
+    }
+    .no_acc{
+        display: flex;
+        flex-direction: column;
+    }
+    .Role{
+        width:50vw;
+    }
+}
+@media(max-width:375px){
+    .container{
+        width:78vw;
+        border-radius: 40px;
+    }
+    .no_acc{
+        display: flex;
+        flex-direction: column;
+    }
+    .Role{
+        width:55vw;
+    }
+}
+
+
+

@@ -1,0 +1,66 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap');
+body{
+    background: #eee;
+    height:100vh;
+    font-family:"Inter", sans-serif;
+    display:flex;
+    flex-direction: column;
+    align-items: center;
+}
+*{
+    box-sizing: border-box;
+}
+form{
+    background: white;
+    width: 700px;
+    padding:20px;
+    max-width: calc(100%-30px);
+}
+fieldset{
+    margin:10px
+}
+.g-recaptcha,
+.submit{
+    margin:5px
+}
+.submit{
+    color:white;
+    background-color: rgb(13, 196, 13);
+    width: 15%;
+    height:3%
+}
+.submit:hover{
+    background-color: green;
+}
+@media (max-width:800px) {
+    form{
+        width:70%
+    }
+    h1{
+        font-size: 4vw;
+    }
+    .submit{
+        width: 20%;
+    }
+}
+@media(max-width:523px){
+    form{
+        width:85%;
+    }
+    .submit{
+        width:25%;
+        height: 2%;
+    }
+}
+@media(max-width:400px){
+    form{
+        width:90%;
+    }
+    fieldset legend,
+    fieldset div{
+        font-size: smaller;
+    }
+    .g-recaptcha{
+        display: none;
+    }
+}

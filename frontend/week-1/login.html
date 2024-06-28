@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PoS Login</title>
+    <link rel="stylesheet" href="css/login_style.css">
+    <link rel="shortcut icon" href="/frontend/week-1/img/favicon_io/favicon-16x16.png">
+</head>
+<body>
+    <div class="container slideintop">
+        <form action="form.php" class="form" id="myForm">
+            <img src="https://yt3.googleusercontent.com/cax203dzXyCCYVUwNfBgeugi5M9McrMllU_hpWTHBovPKFeTvViAynVwK2D-EPXxSEvoPgYCQEE=s900-c-k-c0x00ffffff-no-rj" alt="Lightspeed" class="logo">
+            <h2>Login</h2>
+            <label for="e-mail">
+                <p class="Email">Email Address</p>
+                <input type="email" name="key" id="e-mail" placeholder="    Enter your Email" , class="input" required>
+            </label>
+            <label for="password">
+                <p class="password">Password</p>
+                <input type="password" name="value" id="password" placeholder="    Enter your Password", class="input" required>
+            </label>
+            <a href="#" class="Forget">Forgot Password?</a>
+            <div class="Role">
+                Enter as:
+                <label for="Admin">
+                    <input type="radio" name="Role" id="Admin"class="display-inline" value="Admin" required> Admin
+                </label>
+                <label for="Cashier">
+                    <input type="radio" name="Role" id="Cashier" value="Cashier"> Cashier
+                </label>
+            </div>
+            <div class="end">
+                <button type="submit" id="myButton">
+                    Log in
+                </button>
+            </div>
+            <p class="no_acc"> Don't have an account yet? <a href="/frontend/week-1/sign_up.html"> Sign up here</a> </p>
+        </form>
+    </div>
+    <script type="text/javascript">
+        document.getElementById("myButton").onclick = function() {
+            let allAreFilled = true;
+            document.getElementById("myForm").querySelectorAll("[required]").forEach(function(i) {
+                if (!allAreFilled) return;
+                if (i.type === "radio") {
+                let radioValueCheck = false;
+        document.getElementById("myForm").querySelectorAll(`[name=${i.name}]`).forEach(function(r) {
+                if (r.checked) radioValueCheck = true;
+            })
+            allAreFilled = radioValueCheck;
+            return;
+            }
+            if (!i.value) { allAreFilled = false;  return; }
+            })
+            if (!allAreFilled) {
+                alert('Fill all the fields');
+            }
+            else if(allAreFilled){
+                alert("Backend not curently available")
+            }
+        };
+    </script>
+</body>
+</html>
