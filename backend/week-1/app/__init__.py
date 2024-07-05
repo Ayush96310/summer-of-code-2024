@@ -4,7 +4,7 @@ from flask_migrate import Migrate
 from flask_cors import CORS
 db=SQLAlchemy()
 def create_app():
-    app=Flask(__name__,template_folder='template')
+    app=Flask(__name__,template_folder='week-2/template')
     CORS(app)
     app.config['SQLALCHEMY_DATABASE_URI'] = 'postgresql://postgres:worldwar1%40(28%2F7%2F1914)@localhost:5432/devclub'
     db.init_app(app)

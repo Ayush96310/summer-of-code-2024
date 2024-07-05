@@ -35,8 +35,8 @@ def test_inventory_item_model(init_database):
 
 def test_customer_model(init_database):
     customer = Customer(
-        c_name='Tarun Aggarwal',
-        c_email='Tarun.aggarwal@example.com',
+        c_name='Vikas Aggarwal',
+        c_email='Vikas.aggarwal@example.com',
         c_contact='1234567890'
     )
     db.session.add(customer)
@@ -45,10 +45,11 @@ def test_customer_model(init_database):
 
 def test_staff_model(init_database):
     staff = Staff(
-        s_name='Tarun Aggarwal',
-        s_email='Tarun.aggarwal@example.com',
+        s_name='Vikas Aggarwal',
+        s_email='Vikas.aggarwal@example.com',
         s_isAdmin=True,
-        s_contact='0987654321'
+        s_contact='0987654321',
+        s_password='password'
     )
     db.session.add(staff)
     db.session.commit()
@@ -56,15 +57,16 @@ def test_staff_model(init_database):
 
 def test_transaction_model(init_database):
     customer = Customer(
-        c_name='Tarun Aggarwal',
-        c_email='Tarun.aggarwal@example.com',
+        c_name='Vikas Aggarwal',
+        c_email='Vikas.aggarwal@example.com',
         c_contact='1234567890'
     )
     staff = Staff(
-        s_name='Tarun Aggarwal',
-        s_email='Tarun.aggarwal@example.com',
+        s_name='Vikas Aggarwal',
+        s_email='Vikas.aggarwal@example.com',
         s_isAdmin=True,
-        s_contact='0987654321'
+        s_contact='0987654321',
+        s_password='password'
     )
     item = InventoryItems(
         item_sku='12345',
