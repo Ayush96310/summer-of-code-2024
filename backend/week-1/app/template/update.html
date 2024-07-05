@@ -1,0 +1,14 @@
+{% extends "base.html" %}
+{% block title %}Update{% endblock %}
+
+{% block content %}
+<h3>Update Product </h3>
+<form action="{{url_for('update', item_sku=product.item_sku)}}" method="POST">
+    {# Item SKU: <input name="item_sku" type="text" value='{{product.item_sku}}' required><br> #}
+    Item Name: <input name="item_name" type="text" value='{{product.item_name}}'><br>
+    Item Description: <input name="item_description" type="text" value='{{product.item_description}}'><br>
+    Item Price: <input name="item_price" type="number" value='{{product.item_price}}'><br>
+    Item Quantity: <input name="item_qty" type="number" value='{{product.item_qty}}'><br>
+    <button type="submit" id="update">Update</button>
+</form>
+{% endblock %}

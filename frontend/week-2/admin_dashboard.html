@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Admin Dashboard</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUUVM" crossorigin="anonymous" />
+</head>
+
+<body>
+  <nav class="navbar navbar-expand-lg bg-body-tertiary">
+    <div class="container-fluid">
+      <a class="navbar-brand" href="#">Admin Dashboard</a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+          <li class="nav-item">
+            <a class="nav-link active" aria-current="page" href="#">Home</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#">About</a>
+          </li>
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+              Theme
+            </a>
+            <ul class="dropdown-menu">
+              <li class="dropdown-item">Light</li>
+              <li class="dropdown-item">Dark High Contrast</li>
+              <li class="dropdown-item">Dark Modern</li>
+            </ul>
+          </li>
+        </ul>
+        <form class="d-flex" role="search">
+          <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+          <button class="btn btn-outline-success" type="submit">Search</button>
+        </form>
+        <div class="analytics">
+          <a href="#" role="button" aria-expanded="false">
+            <img src="/frontend/week-1/img/analytic-icon-11444.png" class="rounded-circle" alt="Analytics" width="50px" style=margin-left:10px>
+          </a>
+        </div>
+        <div class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+            <img src="https://files.codingninjas.in/avatar-1710924338.png" class="rounded-circle" alt="Profile" style=margin-left:10px >
+          </a>
+          <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
+            <li><a class="dropdown-item" href="#">Profile</a></li>
+            <li><a class="dropdown-item" href="#">Settings</a></li>
+            <li><hr class="dropdown-divider"></li>
+            <li><a class="dropdown-item" href="#">Logout</a></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </nav>
+  <div class="container mt-4">
+    <!-- Top 6 Sold Stocks-->
+    <div class="row mb-4">
+      <h3 class="mb-3">Top 6 Sold Stocks</h3>
+      <div class="card" style="width: 20rem;">
+        <div class="card-body">
+          <h5 class="card-title">Stock 1</h5>
+          <h6 class="card-subtitle mb-2 text-body-secondary">Card subtitle</h6>
+          <p class="card-text">Sample Details about Stock.</p>
+          <a href="#" class="card-link">Card link</a>
+          <a href="#" class="card-link">Another link</a>
+        </div>
+      </div>
+      <div class="card" style="width: 20rem;">
+        <div class="card-body">
+          <h5 class="card-title">Stock 2</h5>
+          <h6 class="card-subtitle mb-2 text-body-secondary">Card subtitle</h6>
+          <p class="card-text">Sample Details about Stock.</p>
+          <a href="#" class="card-link">Card link</a>
+          <a href="#" class="card-link">Another link</a>
+        </div>
+      </div>
+      <div class="card" style="width: 20rem;">
+        <div class="card-body">
+          <h5 class="card-title">Stock 3</h5>
+          <h6 class="card-subtitle mb-2 text-body-secondary">Card subtitle</h6>
+          <p class="card-text">Sample Details about Stock.</p>
+          <a href="#" class="card-link">Card link</a>
+          <a href="#" class="card-link">Another link</a>
+        </div>
+      </div>
+      <div class="card" style="width: 20rem;">
+        <div class="card-body">
+          <h5 class="card-title">Stock 4</h5>
+          <h6 class="card-subtitle mb-2 text-body-secondary">Card subtitle</h6>
+          <p class="card-text">Sample Details about Stock.</p>
+          <a href="#" class="card-link">Card link</a>
+          <a href="#" class="card-link">Another link</a>
+        </div>
+      </div>
+      <div class="card" style="width: 20rem;">
+        <div class="card-body">
+          <h5 class="card-title">Stock 5</h5>
+          <h6 class="card-subtitle mb-2 text-body-secondary">Card subtitle</h6>
+          <p class="card-text">Sample Details about Stock.</p>
+          <a href="#" class="card-link">Card link</a>
+          <a href="#" class="card-link">Another link</a>
+        </div>
+      </div>
+      <div class="card" style="width: 20rem;">
+        <div class="card-body">
+          <h5 class="card-title">Stock 6</h5>
+          <h6 class="card-subtitle mb-2 text-body-secondary">Card subtitle</h6>
+          <p class="card-text">Sample Details about Stock.</p>
+          <a href="#" class="card-link">Card link</a>
+          <a href="#" class="card-link">Another link</a>
+        </div>
+      </div>
+    </div>
+
+    <!-- Recent Orders-->
+    <div class="row mb-4">
+      <h3 class="mb-3">Recent Orders (Last 24 Hours)</h3>
+      <div class="card" style="width: 100%;">
+        <ul class="list-group list-group-flush">
+          <li class="list-group-item">Order 1</li>
+          <li class="list-group-item">Order 2</li>
+          <li class="list-group-item">Order 3</li>
+        </ul>
+      </div>
+    </div>
+
+    <!-- Urgently Needed Stocks-->
+    <div class="row mb-4">
+      <h3 class="mb-3">Urgently Needed Stocks</h3>
+      <div class="card" style="width: 100%;">
+        <ul class="list-group list-group-flush">
+          <li class="list-group-item">Stock 1</li>
+          <li class="list-group-item">Stock 2</li>
+          <li class="list-group-item">Stock 3</li>
+        </ul>
+      </div>
+    </div>
+
+    <!-- Dropdown to Choose Stock -->
+    <div class="row mb-4">
+      <div class="col-12">
+        <label for="stockDetails" class="form-label">Find Stock Deatils
+        </label>
+        <select class="form-select" id="stockDetails" aria-label="Stock selection">
+          <option selected>Choose a Stock</option>
+          <option value="Stock 1">Stock 1</option>
+          <option value="Stock 2">Stock 2</option>
+          <option value="Stock 3">Stock 3</option>
+        </select>
+      </div>
+    </div>
+  </div>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-geWF76RCwLtnZ8qwWowPQNguL3RmwHVBC9FhGdlKrxdiJJigb/j/68SIy3Te4Bkz" crossorigin="anonymous">
+  </script>
+</body>
+
+</html>
+ 

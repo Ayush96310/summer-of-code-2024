@@ -1,6 +1,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap');
 body{
-    background: #eee;
+    background-image: url(/frontend/week-1/img/503b174d539eb6e6a2a8ceca6ced9b04.jpg);
+    /* background: #eee; */
     height:100vh;
     font-family:"Inter", sans-serif;
     display:flex;
@@ -10,18 +11,24 @@ body{
 *{
     box-sizing: border-box;
 }
+h1{
+    color: white;
+}
 form{
-    background: white;
+    background: #eee;
     width: 700px;
     padding:20px;
     max-width: calc(100%-30px);
 }
 fieldset{
-    margin:10px
+    margin:10px;
 }
 .g-recaptcha,
 .submit{
     margin:5px
+}
+fieldset legend{
+    color:rgb(212, 11, 135);
 }
 .submit{
     color:white;
