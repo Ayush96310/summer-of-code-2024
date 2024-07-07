@@ -1,20 +1,18 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>PoS Login</title>
-    <link rel="stylesheet" href="css/login_style.css">
+    <link rel="stylesheet" href="{{ url_for('staff.static' , filename='styles/login_style.css') }}">
     <link rel="shortcut icon" href="/frontend/week-1/img/favicon_io/favicon-16x16.png">
-    <script src="/frontend/week-2/login.js"></script>
 </head>
 
 <body>
     <div class="container slideintop">
-        <form action="" class="form" id="myForm" onsubmit="FormSubmission(event)">
+        <form class="form" id="myForm">
             <img src="https://yt3.googleusercontent.com/cax203dzXyCCYVUwNfBgeugi5M9McrMllU_hpWTHBovPKFeTvViAynVwK2D-EPXxSEvoPgYCQEE=s900-c-k-c0x00ffffff-no-rj"
-                alt="Lightspeed" class="logo">
+                alt="Lightspeed" class="logo"><div id="loginMessage"></div>
             <h2>Login</h2>
             <label for="e-mail">
                 <p class="Email">Email Address</p>
@@ -41,9 +39,10 @@
                     Log in
                 </button>
             </div>
-            <p class="no_acc"> Don't have an account yet? <a href="/frontend/week-1/sign_up.html"> Sign up here</a> </p>
+            <p class="no_acc"> Don't have an account yet? <a href="{{ url_for('staff.sign_up') }}"> Sign up here</a> </p>
         </form>
     </div>
+    <script src="{{ url_for('staff.static', filename='scripts/login.js') }}"></script>
 </body>
 
 </html>

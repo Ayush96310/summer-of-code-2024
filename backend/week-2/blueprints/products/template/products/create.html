@@ -1,0 +1,13 @@
+{% extends "products/base.html" %}
+{% block title %}Create{% endblock %}
+
+{% block content %}
+<h3>Enter the details </h3>
+<form action="{{url_for('product.create')}}" method="POST">
+    Item SKU: <input name="item_sku" type="text" placeholder="Enter item sku" required><br>
+    Item Name: <input name="item_name" type="text" placeholder="Enter item name"><br>
+    Item Description: <input name="item_description" type="text" placeholder="Provide a description for item"><br>
+    Item Price: <input name="item_price" type="number" placeholder="Enter price"><br>
+    Item Quantity: <input name="item_qty" type="number" placeholder="Enter quantity left"><br>
+    <button type="submit" id="create">Add</button>
+{% endblock %}

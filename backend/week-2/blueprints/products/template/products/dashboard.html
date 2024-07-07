@@ -1,29 +1,33 @@
-{% extends "base.html" %}
+{% extends "products/base.html" %}
 {% block title %}Dashboard{% endblock %}
 
 {% block content %}
 <h1>Dashboard</h1>
+    <form action="{{url_for('product.products')}}" method="POST">
+        <input type="text" name="search" placeholder="Search element by ID">
+        <button type="submit" id="search">Search</button>
+    </form>
+    <br>
+    <button onclick="showallitem()">Show All</button>
+    <br>
     <ul>
-        {% for item in product %}
+        {% for item in products %}
             <li>{{ item }}
                 <button onclick="deleteitem('{{ item.item_sku }}')">Delete</button>
                 <button onclick="getdetails('{{item.item_sku}}')">Details</button>
                 <button onclick="updateitem('{{ item.item_sku }}')">Update</button>
             </li>
         {% endfor %}
+
+        {% if not products %}
+            <li>No results found.</li>
+        {% endif %}
     </ul>
 <h3>Add New Product </h3>
-<form action="{{url_for('products')}}" method="POST">
-    Item SKU: <input name="item_sku" type="text" placeholder="Enter item sku" required><br>
-    Item Name: <input name="item_name" type="text" placeholder="Enter item name"><br>
-    Item Description: <input name="item_description" type="text" placeholder="Provide a description for item"><br>
-    Item Price: <input name="item_price" type="number" placeholder="Enter price"><br>
-    Item Quantity: <input name="item_qty" type="number" placeholder="Enter quantity left"><br>
-    <button type="submit" id="create">Create</button>
-</form>
+<button onclick="createitem()">Create</button>
 <script type="text/javascript">
     function deleteitem(item_sku){
-        fetch('{{ url_for("delete", item_sku="") }}' + item_sku, {
+        fetch('{{ url_for("product.delete", item_sku="") }}' + item_sku, {
             method: 'DELETE',
         }).then(response => {
             if(response.ok){
@@ -36,12 +40,20 @@
         });
     }
     function getdetails(item_sku){
-        const detailsUrl='{{ url_for("details", item_sku="") }}' + item_sku;
+        const detailsUrl='{{ url_for("product.details", item_sku="") }}' + item_sku;
         window.open(detailsUrl,'_blank')
     }
     function updateitem(item_sku){
-        const updateUrl='{{ url_for("update", item_sku="") }}' + item_sku;
+        const updateUrl='{{ url_for("product.update", item_sku="") }}' + item_sku;
         window.open(updateUrl,'_blank')        
+    }
+    function createitem(){
+        const createUrl='{{url_for("product.create")}}';
+        window.open(createUrl,'_blank')
+    }
+    function showallitem(){
+        const showallUrl='{{url_for("product.products")}}';
+        window.location.href=showallUrl;
     }
 </script>
 {% endblock %}
