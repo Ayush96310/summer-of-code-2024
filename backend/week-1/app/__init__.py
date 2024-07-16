@@ -13,8 +13,7 @@ def create_app():
     from blueprints.dashboard.routes import dash
     app.register_blueprint(product,url_prefix='/admin')
     app.register_blueprint(staff,url_prefix='/staff')
-    app.register_blueprint(dash,url_prefix='/dash')
-
+    
     migrate = Migrate(app, db) 
     with app.app_context():
         from app.models import Customer, Transaction
