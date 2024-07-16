@@ -14,7 +14,7 @@
 .slideintop{
     animation: slideintop 0.8s ease-in 1s 1 normal;
 }
-body{
+.background_wrapper{
     background-image: url(https://img.freepik.com/free-photo/arrangement-black-friday-shopping-carts-with-copy-space_23-2148667047.jpg?size=626&ext=jpg&ga=GA1.1.1480204119.1718841600&semt=ais_userhttps://i.pinimg.com/736x/21/08/96/2108963a4dcf74cdbcc13073c4185f83.jpg);
     background-repeat: no-repeat;
     background-size: cover;
@@ -56,7 +56,7 @@ body{
 .logo{
     width:5vh;
 }
-.end button{
+.end_button{
     background-color:rgb(212, 11, 135);
     color: white;
     width:50vh;
@@ -65,23 +65,24 @@ body{
     font-size: 16px;
     cursor: pointer;
 }
-.end button:hover{
+.end_button:hover{
     background-color:rgb(158, 11, 85);
 }
 .end,.no_acc{
     display: flex;
     justify-content: center;
 }
-.Forget, .no_acc a{
+.Forget, .signup{
     color: white;
     text-decoration: none;
 }
-.Forget:hover, .no_acc a:hover{
+.Forget:hover, .signup:hover{
     color:blue;
     font-size: large;
 }
 .form{
     /* border: 2px solid red; */
+    background: none;
     display: flex;
     flex-direction: column;
     height: 70vh;
@@ -89,10 +90,10 @@ body{
     justify-content: space-between;
     align-items: center;
 }
-h2{
+.Login_Title{
     align-self: flex-start;
 }
-.form img{
+.logo{
     align-self: flex-start;
 }
 .Forget{
@@ -143,7 +144,7 @@ h2{
         width:55vw;
         font-size: smaller;
     }
-    .end button{
+    .end_button{
         background-color:rgb(212, 11, 135);
         color: white;
         width:40vh;

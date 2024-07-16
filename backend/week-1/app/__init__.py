@@ -10,8 +10,10 @@ def create_app():
     db.init_app(app)
     from blueprints.products.routes import product
     from blueprints.staff.routes import staff
+    from blueprints.dashboard.routes import dash
     app.register_blueprint(product,url_prefix='/admin')
     app.register_blueprint(staff,url_prefix='/staff')
+    app.register_blueprint(dash,url_prefix='/dash')
 
     migrate = Migrate(app, db) 
     with app.app_context():

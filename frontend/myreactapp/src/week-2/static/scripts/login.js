@@ -1,15 +1,16 @@
-document.getElementById("myForm").addEventListener('submit',function(event){
-    event.preventDefault()
+export function handleFormSubmit(event) {
+    event.preventDefault();
     const loginForm = new FormData(this);
     const login = {
         email: loginForm.get('Email_Address'),
         password: loginForm.get('Password'),
         role: loginForm.get('Role')
     };
-    loginURL='login'
+    const loginURL = 'http://127.0.0.1:5000/staff/login';
     authenticateLogin(loginURL, login, 'loginMessage');
-});
-function authenticateLogin(loginURL, login_data, messageElementId) {
+}
+
+export function authenticateLogin(loginURL, login_data, messageElementId) {
     fetch(loginURL, {
         method: 'POST',
         headers: {
@@ -28,11 +29,11 @@ function authenticateLogin(loginURL, login_data, messageElementId) {
             document.getElementById(messageElementId).textContent = 'Success: ' + data.message;
             setTimeout(() => {
                 if (data.Admin) {
-                    const adminDashboardUrl = "{{ admin_dashboard_url }}";
+                    const adminDashboardUrl = "/admindashboard";  
                     window.location.href = adminDashboardUrl;
                 } else {
-                    const cashierDashboardUrl = "{{ cashier_dashboard_url }}";  
-                    window.location.href = cashierDashboardUrl; 
+                    const cashierDashboardUrl = "/cashierdashboard";  
+                    window.location.href = cashierDashboardUrl;
                 }
             }, 2000);
         } else {
