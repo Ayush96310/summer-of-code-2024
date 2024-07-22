@@ -15,3 +15,5 @@ class Staff(UserMixin,db.Model):
 
     def check_password(self, password):
         return check_password_hash(self.s_password, password)
+    def get_id(self):
+        return self.s_id

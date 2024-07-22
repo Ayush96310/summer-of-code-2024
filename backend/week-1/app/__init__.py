@@ -6,7 +6,8 @@ from flask_cors import CORS
 
 db = SQLAlchemy()
 login_manager = LoginManager()
-login_manager.login_view = 'login'
+login_manager.login_view = 'http://localhost:3000/login'
+login_manager.login_message = 'Please log in to access this page.'
 
 def create_app():
     app = Flask(__name__)

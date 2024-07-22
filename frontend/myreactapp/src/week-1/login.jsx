@@ -38,7 +38,6 @@ const Login = () => {
                 name="Email_Address"
                 id="e-mail"
                 placeholder="Enter your Email"
-                className={styles.input}
                 required
               />
             </label>
@@ -49,7 +48,6 @@ const Login = () => {
                 name="Password"
                 id="password"
                 placeholder="Enter your Password"
-                className={styles.input}
                 required
               />
             </label>

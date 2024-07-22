@@ -113,7 +113,10 @@ const AdminDashboard = () => {
                   <hr className="dropdown-divider" />
                 </li>
                 <li>
-                  <Link className="dropdown-item" to="#">
+                  <Link
+                    className="dropdown-item"
+                    to="http://127.0.0.1:5000/staff/logout"
+                  >
                     Logout
                   </Link>
                 </li>
