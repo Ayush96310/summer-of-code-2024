@@ -1,6 +1,6 @@
 import React, { useEffect } from "react";
 import { Link } from "react-router-dom";
-import s from "./styles/login.module.css";
+import styles from "./styles/login.module.css";
 import { handleFormSubmit } from "../week-2/static/scripts/login";
 const Login = () => {
   useEffect(() => {
@@ -21,49 +21,49 @@ const Login = () => {
         rel="shortcut icon"
         href="/frontend/week-1/img/favicon_io/favicon-16x16.png"
       />
-      <div className={s.background_wrapper}>
-        <div className={`${s.container} ${s.slideintop}`}>
-          <form className={s.form} id="myForm">
+      <div className={styles.background_wrapper}>
+        <div className={`${styles.container} ${styles.slideintop}`}>
+          <form className={styles.form} id="myForm">
             <img
               src="https://yt3.googleusercontent.com/cax203dzXyCCYVUwNfBgeugi5M9McrMllU_hpWTHBovPKFeTvViAynVwK2D-EPXxSEvoPgYCQEE=s900-c-k-c0x00ffffff-no-rj"
               alt="Lightspeed"
-              className={s.logo}
+              className={styles.logo}
             />
             <div id="loginMessage" />
-            <h2 className={s.Login_Title}>Login</h2>
+            <h2 className={styles.Login_Title}>Login</h2>
             <label htmlFor="e-mail">
-              <p className={s.Email}>Email Address</p>
+              <p className={styles.Email}>Email Address</p>
               <input
                 type="email"
                 name="Email_Address"
                 id="e-mail"
                 placeholder="Enter your Email"
-                className={s.input}
+                className={styles.input}
                 required
               />
             </label>
             <label htmlFor="password">
-              <p className={s.password}>Password</p>
+              <p className={styles.password}>Password</p>
               <input
                 type="password"
                 name="Password"
                 id="password"
                 placeholder="Enter your Password"
-                className={s.input}
+                className={styles.input}
                 required
               />
             </label>
-            <a href="#" className={s.Forget}>
+            <a href="#" className={styles.Forget}>
               Forgot Password?
             </a>
-            <div className={s.Role}>
+            <div className={styles.Role}>
               Enter as:
               <label htmlFor="Admin">
                 <input
                   type="radio"
                   name="Role"
                   id="Admin"
-                  className={s.display_inline}
+                  className={styles.display_inline}
                   defaultValue={1}
                   required
                 />
@@ -74,14 +74,14 @@ const Login = () => {
                 Cashier
               </label>
             </div>
-            <div className={s.end}>
-              <button type="submit" id="myButton" className={s.end_button}>
+            <div className={styles.end}>
+              <button type="submit" id="myButton" className={styles.end_button}>
                 Log in
               </button>
             </div>
-            <p className={s.no_acc}>
+            <p className={styles.no_acc}>
               Don't have an account yet?
-              <Link className={s.signup} to="/signup">
+              <Link className={styles.signup} to="/signup">
                 Sign up here
               </Link>
             </p>

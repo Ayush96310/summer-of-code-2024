@@ -1,73 +1,76 @@
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap');
-.background_wrapper{
-    background-image: url(https://www.hdwallpapers.net/previews/black-waves-1037.jpg);
-    /* height:100vh; */
-    width:100vw;
-    font-family:"Inter", sans-serif;
-    display:flex;
+.container {
+    display: flex;
     flex-direction: column;
     align-items: center;
+    justify-content: center;
+    padding: 20px;
+    background-image: url(https://www.hdwallpapers.net/previews/black-waves-1037.jpg);
 }
-*{
-    box-sizing: border-box;
+
+.title {
+font-size: 2em;
+margin-bottom: 20px;
+color: #0cd2ec;
 }
-.Title{
-    color: white;
+
+.form {
+width: 100%;
+max-width: 600px;
+padding: 20px;
+border: 1px solid #f0ebeb;
+border-radius: 5px;
+background-color: #ffffff;
+box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
 }
-.form{
-    background: #eee;
-    width: 700px;
-    padding:20px;
-    max-width: calc(100%-30px);
+
+.fieldset {
+margin-bottom: 20px;
+padding: 10px;
+border: 1px solid #f0ebeb;
+border-radius: 5px;
 }
-.fieldset{
-    margin:10px;
+
+.legend {
+font-size: 1.2em;
+color: #f31396;
 }
-.recaptcha,
-.submit{
-    margin:5px
+
+label {
+display: block;
+margin-bottom: 10px;
+color: #333;
 }
-.legend{
-    color:rgb(212, 11, 135);
+
+input[type="text"],
+input[type="email"],
+input[type="password"],
+input[type="tel"],
+select {
+width: 100%;
+padding: 10px;
+margin-top: 5px;
+border: 1px solid #f0ebeb;
+border-radius: 5px;
+box-sizing: border-box;
 }
-.submit{
-    color:white;
-    background-color: rgb(13, 196, 13);
-    width: 15%;
-    height:3%
+
+.submit {
+width: 100%;
+padding: 10px;
+background-color: #007bff;
+border: none;
+border-radius: 5px;
+color: #ffffff;
+font-size: 1.2em;
+cursor: pointer;
+margin-top: 10px;
 }
-.submit:hover{
-    background-color: green;
+
+.submit:hover {
+background-color: #0354aa;
 }
-@media (max-width:800px) {
-    .form{
-        width:70%
-    }
-    .Title{
-        font-size: 4vw;
-    }
-    .submit{
-        width: 20%;
-    }
-}
-@media(max-width:523px){
-    .form{
-        width:85%;
-    }
-    .submit{
-        width:25%;
-        height: 2%;
-    }
-}
-@media(max-width:400px){
-    .form{
-        width:90%;
-    }
-    .legend,
-    .fieldset_div{
-        font-size: smaller;
-    }
-    .recaptcha{
-        display: none;
-    }
+
+.error {
+color: red;
+font-size: 0.9em;
 }
