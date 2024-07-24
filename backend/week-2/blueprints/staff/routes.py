@@ -1,4 +1,4 @@
-from flask import render_template, request, redirect, url_for, jsonify, Blueprint
+from flask import render_template, request,jsonify, Blueprint
 from flask_login import login_user, logout_user, login_required, current_user
 from blueprints.staff.models import Staff
 from app import db
@@ -12,10 +12,6 @@ staff = Blueprint('staff', __name__, template_folder=template_dir, static_folder
 
 @staff.route('/login', methods=['POST'])
 def login():
-    # if request.method == 'GET':
-    #     # login_url = url_for('staff.login')
-    #     return render_template("login.jsx")
-    # elif request.method == 'POST':
     data = request.json
     email = data.get('email')
     password = data.get('password')
@@ -25,8 +21,10 @@ def login():
 
     if user and user.check_password(password) and bool(int(role)) == user.s_isAdmin:
         login_user(user)
+        print(f"User {user.s_id} logged in successfully")
         return jsonify({"success": True, "message": "Login successful!", "Admin": int(role)})
     else:
+        print("Invalid login attempt")
         return jsonify({"success": False, "message": "Invalid username or password"}), 401
 
 @staff.route('/logout')
@@ -34,6 +32,15 @@ def login():
 def logout():
     logout_user()
     return jsonify({"success": True, "message": "Logout successful!"})
+
+@staff.route('/status', methods=['GET'])
+def status():
+    if current_user.is_authenticated:
+        print(f"User {current_user.get_id()} is authenticated")
+        return jsonify({"authenticated": True, "user_id": current_user.get_id()})
+    else:
+        print("User is not authenticated")
+        return jsonify({"authenticated": False})
 
 @staff.route('/signup', methods=['POST'])
 def sign_up():

@@ -16,26 +16,27 @@ export function authenticateLogin(loginURL, login_data, messageElementId) {
     axios.post(loginURL, login_data, {
         headers: {
             'Content-Type': 'application/json'
-        }
+        },
+        withCredentials: true
     })
-    .then(response => {
-        const data = response.data;
-        if (data.success) {
-            document.getElementById(messageElementId).textContent = 'Success: ' + data.message;
-            setTimeout(() => {
-                if (data.Admin) {
-                    const adminDashboardUrl = "/admindashboard";  
-                    window.location.href = adminDashboardUrl;
-                } else {
-                    const cashierDashboardUrl = "/cashierdashboard";  
-                    window.location.href = cashierDashboardUrl;
-                }
-            }, 2000);
-        } else {
-            document.getElementById(messageElementId).textContent = 'Error: ' + data.message;
-        }
-    })
-    .catch(error => {
-        document.getElementById(messageElementId).textContent = 'Error: ' + error.message;
-    });
+        .then(response => {
+            const data = response.data;
+            if (data.success) {
+                document.getElementById(messageElementId).textContent = 'Success: ' + data.message;
+                setTimeout(() => {
+                    if (data.Admin) {
+                        const adminDashboardUrl = "/admindashboard";
+                        window.location.href = adminDashboardUrl;
+                    } else {
+                        const cashierDashboardUrl = "/cashierdashboard";
+                        window.location.href = cashierDashboardUrl;
+                    }
+                }, 2000);
+            } else {
+                document.getElementById(messageElementId).textContent = 'Error: ' + data.message;
+            }
+        })
+        .catch(error => {
+            document.getElementById(messageElementId).textContent = 'Error: ' + error.message;
+        });
 }
