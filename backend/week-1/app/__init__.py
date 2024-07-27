@@ -3,6 +3,8 @@ from flask_sqlalchemy import SQLAlchemy
 from flask_migrate import Migrate
 from flask_login import LoginManager
 from flask_cors import CORS
+from flask_session import Session
+from app.config import ApplicationConfig
 
 db = SQLAlchemy()
 login_manager = LoginManager()
@@ -12,9 +14,9 @@ login_manager.login_message = 'Please log in to access this page.'
 def create_app():
     app = Flask(__name__)
     CORS(app, supports_credentials=True)
-    app.config['SQLALCHEMY_DATABASE_URI'] = 'postgresql://postgres:worldwar1%40(28%2F7%2F1914)@localhost:5432/devclub'
-    app.config['SECRET_KEY'] = '\xee]\xe9\x11\x1b\x00\xaa\xbeE\x03I\xbeh\xc9zQ<-\xd1.\xf3\x9c@\xf6'
+    app.config.from_object(ApplicationConfig)
     db.init_app(app)
+    Session(app)
     login_manager.init_app(app)
     
     from blueprints.products.routes import product

@@ -1,4 +1,4 @@
-from flask import render_template, request,jsonify, Blueprint
+from flask import render_template, request,jsonify, Blueprint,abort,session
 from flask_login import login_user, logout_user, login_required, current_user
 from blueprints.staff.models import Staff
 from app import db
@@ -16,21 +16,22 @@ def login():
     email = data.get('email')
     password = data.get('password')
     role = data.get('role')
-
     user = Staff.query.filter_by(s_email=email).first()
 
-    if user and user.check_password(password) and bool(int(role)) == user.s_isAdmin:
+    if user and user.check_password(password) and bool(int(role)) == user.s_isAdmin and user.s_is_approved:
         login_user(user)
+        session.permanent = True
         print(f"User {user.s_id} logged in successfully")
         return jsonify({"success": True, "message": "Login successful!", "Admin": int(role)})
     else:
         print("Invalid login attempt")
-        return jsonify({"success": False, "message": "Invalid username or password"}), 401
+        return jsonify({"success": False, "message": "Invalid username or password"})
 
 @staff.route('/logout')
 @login_required
 def logout():
     logout_user()
+    session.clear()
     return jsonify({"success": True, "message": "Logout successful!"})
 
 @staff.route('/status', methods=['GET'])
@@ -48,10 +49,14 @@ def sign_up():
         return render_template("sign_up.jsx")
     elif request.method == 'POST':
         data=request.json
+        email=data.get('email')
         print(f"Received data: {data}")
+        user_exists = Staff.query.filter_by(s_email=email).first() is not None
+        if user_exists:
+            abort(409)
         new_staff = Staff(
         s_name=data.get('username'),
-        s_email=data.get('email'),
+        s_email=email,
         s_isAdmin=data.get('role'),
         s_contact=data.get('contact')
         )

@@ -32,6 +32,11 @@ export function addStaff(signupURL,Signup_data,showModal){
     })
     .catch(error => {
         // console.error('Error:', error.message);
-        showModal("An error occurred. Please try again.");
+        if(error.response && error.response.status === 409){
+            showModal("This email is already in use. Please signup using a different email or login.")
+        }
+        else{
+            showModal("An error occurred. Please try again.");
+        }
     }); 
 }
